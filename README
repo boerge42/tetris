@@ -1,0 +1,50 @@
+Hinweise zum Tetris-Programm
+============================
+
+Programmstruktur:
+-----------------
+Idee ist es, einen plattformunabhaengigen Tetris-Clone zu schreiben.
+Plattformunabhängig bedeutet dabei, dass es egal sein soll, unter 
+welchen Betiebssystem und auf welcher Hardware das Spiel laeuft. Dazu 
+wurden alle Routinen, die von der jeweiligen Plattform abhaengen in 
+eigene Module ausgelagert. Nur noch die eigentliche Tetris-Engine ist im 
+Hauptprogramm enthalten.
+
+Folgende Module muessen für die jeweilige Plattform entsprechend 
+angepasst werden:
+
+timer.c
+Enthaelt die Routinen fuer die Zeitsteuerung.
+
+tetris_io.c
+Enthaelt die Ein- und Ausgaberoutinen der Spiel-Engine.
+
+random.c
+Enthaelt die Routinen fuer den Zufallsgenerator.
+
+
+Das vorliegende Programmarchiv verwendet zur Ein-/Ausgabe beispielhaft
+die mcurses-Bibliothek (http://www.mikrocontroller.net/articles/MCURSES).
+Das enthaltene Makefile ist fuer die Uebersetzung unter Linux mit gcc
+als Compiler angepasst:
+
+make
+./tetris
+
+
+Bedienung des Spiels:
+---------------------
+Die Bedienung im vorliegenden Beispiel erfolgt allein ueber die Tastatur.
+
+q und F9:     Spielende
+n:            neues Spiel
+p:            Pause/Pauseende
+Pfeil hoch:   Spielstein drehen
+Pfeil links:  Spielstein nach links
+Pfeil rechts: Spielstein nach rechts
+Pfeil runter: Spielstein fallen lassen
+
+---------
+Have fun!
+
+Uwe Berger (bergeruw(at)gmx.net); 2015
